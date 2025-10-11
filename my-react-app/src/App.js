@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
+import { MapPin } from 'lucide-react';
 
 import bg1 from './images/bg1.jpg';
 import bg2 from './images/bg2.png';
@@ -36,39 +36,54 @@ function App() {
       <div className="overlay"></div>
 
       <Navbar />
-        <div
+
+      <div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '10%',
+          transform: 'translateY(-50%)',
+          color: 'white',
+          zIndex: 2,
+          maxWidth: '90%',
+        }}
+      >
+        <p
           style={{
-            position: 'absolute',
-            top: '50%',
-            left: '10%',
-            transform: 'translateY(-50%)',
-            color: 'white',
-            zIndex: 2,
-            maxWidth: '90%',
+            fontSize: '1.5rem',
+            marginBottom: '0.5rem',
+            opacity: 0.75,
           }}
         >
-          <p
-            style={{
-              fontSize: '1.5rem',
-              marginBottom: '0.5rem',
-              opacity: 0.9,
-            }}
-          >
-            Grandview Heights Secondary School
-          </p>
+          Grandview Heights Secondary School
+        </p>
 
-          <h1
-            style={{
-              fontSize: '7rem',
-              fontWeight: 900,
-              lineHeight: 1,
-              margin: 0,
-            }}
-          >
-            Ursa Major 9180 <br /> Robotics
-          </h1>
-        </div>
+        <h1
+          style={{
+            fontSize: '7rem',
+            fontWeight: 900,
+            lineHeight: 1,
+            margin: 0,
+            opacity: 0.8,
+          }}
+        >
+          Ursa Major 9180 <br /> Robotics
+        </h1>
 
+        <p
+          style={{
+            fontSize: '1.5rem',
+            marginBottom: '0.5rem',
+            opacity: 0.75,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+          }}
+        >
+          <MapPin size={20} color="white" />
+          BC, Canada
+        </p>
+      </div>
     </div>
   );
 }

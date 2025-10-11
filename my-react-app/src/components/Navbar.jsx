@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import { Search, Calendar, Phone, Handshake } from "lucide-react";
 import UrsaLogo from "../images/ursamajorbearlogo.png";
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="navbar">
       <div className="navbar-inner">
         <div className="navbar-top">
-          <div className="navbar-right">
+          <div
+            className={`hamburger ${menuOpen ? "active" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          {/* Right-side items (collapse into hamburger) */}
+          <div className={`navbar-right ${menuOpen ? "open" : ""}`}>
             <div className="navbar-item">
               <Calendar size={18} />
               <span>Events</span>
@@ -35,7 +47,12 @@ export default function Navbar() {
               <img
                 src={UrsaLogo}
                 alt="Logo"
-                style={{ height: "60px", position: "relative", top: "-50px", left: "-6px" }}
+                style={{
+                  height: "60px",
+                  position: "relative",
+                  top: "-50px",
+                  left: "-6px",
+                }}
               />
               <span className="subtext">URSA MAJOR 9180</span>
             </div>
