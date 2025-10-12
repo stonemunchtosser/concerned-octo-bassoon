@@ -128,7 +128,7 @@
 .about-text h2 {
   font-size: 3rem;
   margin-bottom: 24px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .about-text p {
@@ -158,25 +158,17 @@
   transition: opacity 1s ease-in-out;
 }
 
-.content-section {
-  position: relative;
-  padding: 100px 10%;
-  background: rgba(233, 232, 232, 0.9);
-  color: #333;
-  z-index: 3;
-}
-
-.content-section.alt {
+.mirror {
+  flex-direction: row-reverse;
   background-color: #e6ebf2;
 }
 
-.content-section h2 {
-  font-size: 3rem;
-  margin-bottom: 24px;
+.mirror .about-text {
+  padding-left: 40px;
 }
 
-.content-section p {
-  font-size: 1.35rem;
-  line-height: 1.9;
-  max-width: 900px;
+.mirror .about-carousel {
+  justify-content: center;
 }
+
+

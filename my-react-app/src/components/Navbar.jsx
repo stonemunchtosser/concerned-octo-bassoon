@@ -10,9 +10,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-inner">
-        {/* --- Top row --- */}
         <div className="navbar-top">
-          {/* Hamburger menu for mobile toggle */}
           <div
             className={`hamburger ${menuOpen ? "active" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -22,7 +20,6 @@ export default function Navbar() {
             <div></div>
           </div>
 
-          {/* Right-side icons (hidden behind hamburger when closed) */}
           <div className={`navbar-right ${menuOpen ? "open" : ""}`}>
             <div className="navbar-item">
               <Calendar size={18} />
@@ -43,10 +40,8 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* --- Bottom row --- */}
         <div className="navbar-bottom">
           <div className="navbar-left">
-            {/* Logo and team name */}
             <div className="navbar-logo">
               <img
                 src={UrsaLogo}
@@ -60,8 +55,6 @@ export default function Navbar() {
               />
               <span className="subtext">URSA MAJOR 9180</span>
             </div>
-
-            {/* Navigation menu */}
             <ul className="navbar-menu">
               {[
                 "About Us",

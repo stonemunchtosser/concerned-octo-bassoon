@@ -11,15 +11,26 @@ import slide1 from './images/slide1.jpg';
 import slide2 from './images/slide2.jpg';
 import slide3 from './images/slide3.jpeg';
 
+// NEW: Saturday Camp carousel images
+import camp1 from './images/camp1.jpg';
+import camp2 from './images/camp2.png';
+import camp3 from './images/camp3.png';
+
 function App() {
   const backgrounds = [bg1, bg2, bg3];
   const slides = [slide1, slide2, slide3];
+  const campSlides = [camp1, camp2, camp3]; // separate camp images
 
   const [currentBg, setCurrentBg] = useState(0);
   const [fade, setFade] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slideFade, setSlideFade] = useState(true);
 
+  // new state for the Saturday Camp carousel
+  const [currentCampSlide, setCurrentCampSlide] = useState(0);
+  const [campSlideFade, setCampSlideFade] = useState(true);
+
+  // Background rotation
   useEffect(() => {
     const interval = setInterval(() => {
       setFade(false);
@@ -31,6 +42,7 @@ function App() {
     return () => clearInterval(interval);
   }, [backgrounds.length]);
 
+  // About section carousel
   useEffect(() => {
     const interval = setInterval(() => {
       setSlideFade(false);
@@ -41,6 +53,18 @@ function App() {
     }, 4000);
     return () => clearInterval(interval);
   }, [slides.length]);
+
+  // Saturday Camps carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCampSlideFade(false);
+      setTimeout(() => {
+        setCurrentCampSlide((prev) => (prev + 1) % campSlides.length);
+        setCampSlideFade(true);
+      }, 800);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [campSlides.length]);
 
   return (
     <div className="App">
@@ -62,16 +86,15 @@ function App() {
             BC, Canada
           </p>
         </div>
-        
       </section>
 
       <section className="about-section">
         <div className="about-text">
-          <h2>About Our Team</h2>
+          <h2>General Information</h2>
           <p>
             We are Ursa Major 9180 — the robotics team of Grandview Heights Secondary School in Surrey, BC.
             This team was formed in 2022, and we compete in the FIRST Robotics Competition (FRC) as well as
-            the FIRST Lego League (FLL). Our FRC team consists of students grade 9-12 while the FLL team
+            the FIRST Lego League (FLL). Our FRC team consists of students grade 9–12 while the FLL team
             consists of grade 8 students.
           </p>
         </div>
@@ -85,12 +108,30 @@ function App() {
         </div>
       </section>
 
-      <section className="content-section alt">
-        <h2>Our Projects</h2>
-        <p>
-          Explore our past and ongoing robotics projects — from competition robots to STEM outreach.
-        </p>
+      <section className="content-section alt mirror-section">
+        <div className="about-section mirror-layout">
+          <div className="about-carousel">
+            <img
+              src={campSlides[currentCampSlide]}
+              alt="Saturday Camp carousel"
+              className={`carousel-image ${campSlideFade ? 'fade-in' : 'fade-out'}`}
+            />
+          </div>
+
+          <div className="about-text">
+            <h2>Saturday Camps</h2>
+            <p>
+              Our Saturday Camps are back in session!
+              Ursa Major is hosting Saturday LEGO Robotics Camps for students from
+              Grandview Heights' Family of Schools (Edgewood, Pacific Heights, Sunnyside,
+              Morgan, and Rosemary). These fun half-day camps help students build coding,
+              problem-solving, and teamwork skills!
+              Register <a href="https://ursamajorfrc9180.com/saturday-camps/">here</a>.
+            </p>
+          </div>
+        </div>
       </section>
+
     </div>
   );
 }
