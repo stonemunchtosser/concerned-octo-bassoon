@@ -69,7 +69,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* HERO SECTION */}
+
       <section className="hero-section">
         <div
           className={`bg-image ${fade ? 'fade-in' : 'fade-out'}`}
@@ -102,6 +102,7 @@ function App() {
           </p>
         </div>
 
+        <br />
         <div className="about-carousel">
           <img
             src={slides[currentSlide]}
@@ -132,6 +133,9 @@ function App() {
               <a href="https://ursamajorfrc9180.com/saturday-camps/" target="_blank" rel="noopener noreferrer">
                 here
               </a>.
+              <br />
+              <br />
+              <br />
             </p>
           </div>
         </div>
