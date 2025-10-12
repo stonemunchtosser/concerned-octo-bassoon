@@ -5,11 +5,14 @@ import UrsaLogo from "../images/ursamajorbearlogo.png";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState("About Us");
 
   return (
     <nav className="navbar">
       <div className="navbar-inner">
+        {/* --- Top row --- */}
         <div className="navbar-top">
+          {/* Hamburger menu for mobile toggle */}
           <div
             className={`hamburger ${menuOpen ? "active" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -19,7 +22,7 @@ export default function Navbar() {
             <div></div>
           </div>
 
-          {/* Right-side items (collapse into hamburger) */}
+          {/* Right-side icons (hidden behind hamburger when closed) */}
           <div className={`navbar-right ${menuOpen ? "open" : ""}`}>
             <div className="navbar-item">
               <Calendar size={18} />
@@ -40,13 +43,14 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Left section — aligned to bottom */}
+        {/* --- Bottom row --- */}
         <div className="navbar-bottom">
           <div className="navbar-left">
+            {/* Logo and team name */}
             <div className="navbar-logo">
               <img
                 src={UrsaLogo}
-                alt="Logo"
+                alt="Ursa Major Logo"
                 style={{
                   height: "60px",
                   position: "relative",
@@ -56,13 +60,25 @@ export default function Navbar() {
               />
               <span className="subtext">URSA MAJOR 9180</span>
             </div>
+
+            {/* Navigation menu */}
             <ul className="navbar-menu">
-              <li>About Us</li>
-              <li>About FIRST®</li>
-              <li>Our FRC Team</li>
-              <li>Our FLL Team</li>
-              <li>Sponsors</li>
-              <li>Social Handles</li>
+              {[
+                "About Us",
+                "About FIRST®",
+                "Our FRC Team",
+                "Our FLL Team",
+                "Sponsors",
+                "Social Handles",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className={active === item ? "active" : ""}
+                  onClick={() => setActive(item)}
+                >
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
