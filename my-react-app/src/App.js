@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import { MapPin } from 'lucide-react';
+import Footer from "./components/Footer";
 
 import bg1 from './images/bg1.jpg';
 import bg2 from './images/bg2.png';
@@ -68,6 +69,7 @@ function App() {
 
   return (
     <div className="App">
+      {/* HERO SECTION */}
       <section className="hero-section">
         <div
           className={`bg-image ${fade ? 'fade-in' : 'fade-out'}`}
@@ -88,6 +90,7 @@ function App() {
         </div>
       </section>
 
+      {/* ABOUT SECTION */}
       <section className="about-section">
         <div className="about-text">
           <h2>General Information</h2>
@@ -108,6 +111,7 @@ function App() {
         </div>
       </section>
 
+      {/* SATURDAY CAMPS SECTION */}
       <section className="content-section alt mirror-section">
         <div className="about-section mirror-layout">
           <div className="about-carousel">
@@ -121,17 +125,18 @@ function App() {
           <div className="about-text">
             <h2>Saturday Camps</h2>
             <p>
-              Our Saturday Camps are back in session!
-              Ursa Major is hosting Saturday LEGO Robotics Camps for students from
-              Grandview Heights' Family of Schools (Edgewood, Pacific Heights, Sunnyside,
-              Morgan, and Rosemary). These fun half-day camps help students build coding,
-              problem-solving, and teamwork skills!
-              Register <a href="https://ursamajorfrc9180.com/saturday-camps/">here</a>.
+              Our Saturday Camps are back in session! Ursa Major is hosting Saturday LEGO Robotics Camps
+              for students from Grandview Heights' Family of Schools (Edgewood, Pacific Heights, Sunnyside,
+              Morgan, and Rosemary). These fun half-day camps help students build coding, problem-solving,
+              and teamwork skills! Register{" "}
+              <a href="https://ursamajorfrc9180.com/saturday-camps/" target="_blank" rel="noopener noreferrer">
+                here
+              </a>.
             </p>
           </div>
         </div>
       </section>
-
+      <Footer />
     </div>
   );
 }
