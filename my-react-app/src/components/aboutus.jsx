@@ -1,146 +1,101 @@
-import { useState, useEffect } from "react";
-import "../App.css"; // uses root styling
+import { useState } from "react";
+import "./AboutUs.css"; // renamed file so it’s unique
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-
-import bg1 from "../images/bg1.jpg";
-import bg2 from "../images/bg2.png";
-import bg3 from "../images/bg3.jpg";
-
-import team1 from "../images/slide1.jpg";
-import team2 from "../images/slide2.jpg";
-import team3 from "../images/slide3.jpeg";
-
-import camp1 from "../images/camp1.jpg";
-import camp2 from "../images/camp2.png";
-import camp3 from "../images/camp3.png";
+import bg1 from "../images/bearconsimage.jpg";
 
 export default function AboutUs() {
-  const backgrounds = [bg1, bg2, bg3];
-  const slides = [team1, team2, team3];
-  const campSlides = [camp1, camp2, camp3];
-
-  const [currentBg, setCurrentBg] = useState(0);
-  const [fade, setFade] = useState(true);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [slideFade, setSlideFade] = useState(true);
-  const [currentCampSlide, setCurrentCampSlide] = useState(0);
-  const [campSlideFade, setCampSlideFade] = useState(true);
-
-  // Background rotation
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setCurrentBg((prev) => (prev + 1) % backgrounds.length);
-        setFade(true);
-      }, 800);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [backgrounds.length]);
-
-  // Team carousel
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSlideFade(false);
-      setTimeout(() => {
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
-        setSlideFade(true);
-      }, 800);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [slides.length]);
-
-  // Camp carousel
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCampSlideFade(false);
-      setTimeout(() => {
-        setCurrentCampSlide((prev) => (prev + 1) % campSlides.length);
-        setCampSlideFade(true);
-      }, 800);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [campSlides.length]);
+  const [openSection, setOpenSection] = useState(null);
+  const toggleSection = (section) => {
+    setOpenSection(openSection === section ? null : section);
+  };
 
   return (
-    <div className="App">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div
-          className={`bg-image ${fade ? "fade-in" : "fade-out"}`}
-          style={{ backgroundImage: `url(${backgrounds[currentBg]})` }}
-        ></div>
-        <div className="overlay"></div>
-        <Navbar />
+    <div className="aboutpage-app">
+      <Navbar />
+      <section className="aboutpage-hero">
+        <div className="aboutpage-image-wrapper">
+          <img src={bg1} alt="Ursa Major" className="aboutpage-bg" />
+          <div className="aboutpage-overlay"></div>
+        </div>
 
-        <div className="hero-text">
-          <p className="hero-subtext">Who We Are</p>
-          <h1 className="hero-title">
+        <div className="aboutpage-hero-content">
+          <h1 className="aboutpage-title">
             About <br /> Ursa Major 9180
           </h1>
-        </div>
-      </section>
 
-      {/* Team History */}
-      <section className="about-section">
-        <div className="about-text">
-          <h2>Our Story</h2>
-          <p>
-            Founded in 2022, <strong>Ursa Major 9180</strong> is the official robotics team of
-            <em> Grandview Heights Secondary School</em> in Surrey, British Columbia.  
-            <br /><br />
-            We are a student-led team passionate about engineering, programming, and creative problem-solving.
-            Competing in the <strong>FIRST Robotics Competition (FRC)</strong> and <strong>FIRST LEGO League (FLL)</strong>,
-            our mission is to inspire innovation and foster STEM education within our community.
-          </p>
-        </div>
+          {/* Collapsible Sections */}
+          <div className="aboutpage-collapsible-sections">
+            <div
+              className="aboutpage-collapsible"
+              onClick={() => toggleSection("story")}
+            >
+              <h2>+ FRC Team</h2>
+              {openSection === "story" && (
+                <p>
+                Our team has been competing since 2023, participating in Charged UP, 
+                Crescendo, and soon, Reefscape. Each year, we compete at the Canadian 
+                Pacific Regional, which was previously held at the Save-On-Foods 
+                Memorial Centre in Victoria, BC. Starting in 2025, however, the event 
+                will take place at the Pacific Coliseum in Vancouver, BC. At the 
+                Canadian Pacific Regional, around 30 to 50 teams from across the world 
+                participate annually. <br /><br />During our first season, 
+                Charged UP, we ranked #5 overall and reached the finals alongside our 
+                alliance partners 4253 and 8338. We also advanced to the World Championships 
+                in Houston, Texas, where we competed against hundreds of the best teams 
+                from around the globe. To learn more about our Charged UP season, click here. <br /><br />
+                In our second season, Crescendo, we ranked #6 overall and became Alliance 
+                Captain #4, allowing us to select our own alliance partners—6390 and 9449. 
+                Although we didn’t advance as far as we hoped, we gained valuable experience 
+                and learned how to improve in future competitions. To learn more about our 
+                Crescendo season, click here. <br /><br /> Our third season is the current challenge, 
+                Reefscape, where teams must place coral onto reefs and remove algae to maintain 
+                them. To learn more about Reefscape, click here.
+                </p>
+              )}
+            </div>
 
-        <div className="about-carousel">
-          <img
-            src={slides[currentSlide]}
-            alt="Team"
-            className={`carousel-image ${slideFade ? "fade-in" : "fade-out"}`}
-          />
-        </div>
-      </section>
+            <div
+              className="aboutpage-collapsible"
+              onClick={() => toggleSection("mission")}
+            >
+              <h2>+ Our Mission</h2>
+              {openSection === "mission" && (
+                <p>
+                  At Ursa Major, we strive to make STEM approachable and
+                  exciting. Through workshops, LEGO Robotics Camps, and outreach
+                  events, our goal is to spark curiosity and help students
+                  discover teamwork and innovation.
+                </p>
+              )}
+            </div>
 
-      {/* Mission Section */}
-      <section className="content-section alt mirror-section">
-        <div className="about-section mirror-layout">
-          <div className="about-carousel">
-            <img
-              src={campSlides[currentCampSlide]}
-              alt="Team working"
-              className={`carousel-image ${campSlideFade ? "fade-in" : "fade-out"}`}
-            />
+            <div
+              className="aboutpage-collapsible"
+              onClick={() => toggleSection("values")}
+            >
+              <h2>+ Our Core Values</h2>
+              {openSection === "values" && (
+                <ul className="aboutpage-values-list">
+                  <li>
+                    <strong>Teamwork</strong> — We achieve more together.
+                  </li>
+                  <li>
+                    <strong>Innovation</strong> — We approach challenges
+                    creatively.
+                  </li>
+                  <li>
+                    <strong>Community</strong> — We inspire future engineers.
+                  </li>
+                  <li>
+                    <strong>Gracious Professionalism</strong> — We respect all.
+                  </li>
+                </ul>
+              )}
+            </div>
           </div>
-
-          <div className="about-text">
-            <h2>Our Mission</h2>
-            <p>
-              At Ursa Major, we strive to make STEM approachable and exciting for everyone.
-              Through workshops, Saturday LEGO Robotics Camps, and outreach events, our goal is to spark curiosity
-              and help students discover the power of teamwork, innovation, and perseverance.
-            </p>
-          </div>
         </div>
       </section>
-
-      {/* Values Section */}
-      <section className="about-section">
-        <div className="about-text">
-          <h2>Our Core Values</h2>
-          <ul className="values-list">
-            <li><strong>Teamwork</strong> — We achieve more together than alone.</li>
-            <li><strong>Innovation</strong> — We approach challenges with creativity and curiosity.</li>
-            <li><strong>Community</strong> — We support and inspire future generations of engineers.</li>
-            <li><strong>Gracious Professionalism</strong> — We compete fiercely but respect all.</li>
-          </ul>
-        </div>
-      </section>
-
-      <Footer />
     </div>
   );
 }

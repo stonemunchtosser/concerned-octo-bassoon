@@ -1,0 +1,96 @@
+.aboutpage-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.aboutpage-image-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.aboutpage-bg {
+  width: 100%;
+  height: auto; 
+  display: block;
+  object-fit: contain; 
+}
+
+.aboutpage-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.aboutpage-hero-content {
+  position: absolute;
+  top: 25%; /* adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: white;
+  text-align: left;
+  width: 90%;
+  max-width: 1000px;
+  margin-top: -90px;
+}
+
+.aboutpage-subtext {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.aboutpage-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+/* Collapsible styles (same as before) */
+.aboutpage-collapsible-sections {
+  margin-top: 1rem;
+}
+
+.aboutpage-collapsible {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 1.5rem 0;
+  cursor: pointer;
+}
+
+.aboutpage-collapsible h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: white;
+  transition: color 0.3s;
+}
+
+.aboutpage-collapsible:hover h2 {
+  color: #00ff66;
+}
+
+.aboutpage-collapsible p,
+.aboutpage-collapsible ul {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  opacity: 0.95;
+  transition: all 0.3s ease-in-out;
+}
+
+.aboutpage-collapsible ul li {
+  margin-bottom: 0.5rem;
+}
+
+.aboutpage-collapsible p {
+  padding-left: 2em; /* full paragraph indentation */
+  line-height: 1.6;
+}
+
+.aboutpage-collapsible ul {
+  padding-left: 2em; /* keeps list aligned nicely */
+}

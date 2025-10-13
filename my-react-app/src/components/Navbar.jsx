@@ -1,12 +1,38 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import { Search, Calendar, Phone, Handshake } from "lucide-react";
 import UrsaLogo from "../images/ursamajorbearlogo.png";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [active, setActive] = useState("About Us");
+  const [active, setActive] = useState("");
+  const location = useLocation();
+
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/":
+        setActive("Home Page");
+        break;
+      case "/about":
+        setActive("About Us");
+        break;
+      case "/first":
+        setActive("About FIRST®");
+        break;
+      case "/sponsors":
+        setActive("Sponsors");
+        break;
+      case "/social":
+        setActive("Social Handles");
+        break;
+      case "/additional-resources":
+        setActive("Social Handles");
+        break;
+      default:
+        setActive("");
+    }
+  }, [location]);
 
   return (
     <nav className="navbar">
@@ -57,26 +83,89 @@ export default function Navbar() {
               <span className="subtext">URSA MAJOR 9180</span>
             </div>
             <ul className="navbar-menu">
-              <li className={active === "Home Page" ? "active" : ""} onClick={() => setActive("Home Page")}> 
-                <Link to="/" style={{ textDecoration: 'none', color: 'inherit', font: 'inherit' }}>Home Page</Link>
+              <li
+                className={active === "Home Page" ? "active" : ""}
+              >
+                <Link
+                  to="/"
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    font: "inherit",
+                  }}
+                >
+                  Home Page
+                </Link>
               </li>
-              <li className={active === "About Us" ? "active" : ""} onClick={() => setActive("About Us")}> 
-                <Link to="/about" style={{ textDecoration: 'none', color: 'inherit', font: 'inherit' }}>About Us</Link>
+              <li
+                className={active === "About Us" ? "active" : ""}
+              >
+                <Link
+                  to="/about"
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    font: "inherit",
+                  }}
+                >
+                  About Us
+                </Link>
               </li>
-              <li className={active === "About FIRST®" ? "active" : ""} onClick={() => setActive("About FIRST®")}> 
-                <Link to="/first" style={{ textDecoration: 'none', color: 'inherit', font: 'inherit' }}>About FIRST®</Link>
+              <li
+                className={active === "About FIRST®" ? "active" : ""}
+              >
+                <Link
+                  to="/first"
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    font: "inherit",
+                  }}
+                >
+                  About FIRST®
+                </Link>
               </li>
-              <li className={active === "Our FRC Team" ? "active" : ""} onClick={() => setActive("Our FRC Team")}> 
-                <Link to="/frc" style={{ textDecoration: 'none', color: 'inherit', font: 'inherit' }}>Our FRC Team</Link>
+              <li
+                className={active === "Sponsors" ? "active" : ""}
+              >
+                <Link
+                  to="/sponsors"
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    font: "inherit",
+                  }}
+                >
+                  Sponsors
+                </Link>
               </li>
-              <li className={active === "Our FLL Team" ? "active" : ""} onClick={() => setActive("Our FLL Team")}> 
-                <Link to="/fll" style={{ textDecoration: 'none', color: 'inherit', font: 'inherit' }}>Our FLL Team</Link>
+              <li
+                className={active === "Social Handles" ? "active" : ""}
+              >
+                <Link
+                  to="/social"
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    font: "inherit",
+                  }}
+                >
+                  Social Handles
+                </Link>
               </li>
-              <li className={active === "Sponsors" ? "active" : ""} onClick={() => setActive("Sponsors")}> 
-                <Link to="/sponsors" style={{ textDecoration: 'none', color: 'inherit', font: 'inherit' }}>Sponsors</Link>
-              </li>
-              <li className={active === "Social Handles" ? "active" : ""} onClick={() => setActive("Social Handles")}> 
-                <Link to="/social" style={{ textDecoration: 'none', color: 'inherit', font: 'inherit' }}>Social Handles</Link>
+              <li
+                className={active === "Additional Resources" ? "active" : ""}
+              >
+                <Link
+                  to="/frc"
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    font: "inherit",
+                  }}
+                >
+                  Additional Resources
+                </Link>
               </li>
             </ul>
           </div>
