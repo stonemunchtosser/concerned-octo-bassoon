@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
+import { Routes, Route } from 'react-router-dom';
+import AboutUs from './components/aboutus';
 import { MapPin } from 'lucide-react';
 import Footer from "./components/Footer";
 
@@ -69,77 +71,79 @@ function App() {
 
   return (
     <div className="App">
-
-      <section className="hero-section">
-        <div
-          className={`bg-image ${fade ? 'fade-in' : 'fade-out'}`}
-          style={{ backgroundImage: `url(${backgrounds[currentBg]})` }}
-        ></div>
-        <div className="overlay"></div>
-        <Navbar />
-
-        <div className="hero-text">
-          <p className="hero-subtext">Grandview Heights Secondary School</p>
-          <h1 className="hero-title">
-            Ursa Major 9180 <br /> Robotics
-          </h1>
-          <p className="hero-location">
-            <MapPin size={20} color="white" />
-            BC, Canada
-          </p>
-        </div>
-      </section>
-
-      {/* ABOUT SECTION */}
-      <section className="about-section">
-        <div className="about-text">
-          <h2>General Information</h2>
-          <p>
-            We are Ursa Major 9180 — the robotics team of Grandview Heights Secondary School in Surrey, BC.
-            This team was formed in 2022, and we compete in the FIRST Robotics Competition (FRC) as well as
-            the FIRST Lego League (FLL). Our FRC team consists of students grade 9–12 while the FLL team
-            consists of grade 8 students.
-          </p>
-        </div>
-
-        <br />
-        <div className="about-carousel">
-          <img
-            src={slides[currentSlide]}
-            alt="Team carousel"
-            className={`carousel-image ${slideFade ? 'fade-in' : 'fade-out'}`}
-          />
-        </div>
-      </section>
-
-      {/* SATURDAY CAMPS SECTION */}
-      <section className="content-section alt mirror-section">
-        <div className="about-section mirror-layout">
-          <div className="about-carousel">
-            <img
-              src={campSlides[currentCampSlide]}
-              alt="Saturday Camp carousel"
-              className={`carousel-image ${campSlideFade ? 'fade-in' : 'fade-out'}`}
-            />
-          </div>
-
-          <div className="about-text">
-            <h2>Saturday Camps</h2>
-            <p>
-              Our Saturday Camps are back in session! Ursa Major is hosting Saturday LEGO Robotics Camps
-              for students from Grandview Heights' Family of Schools (Edgewood, Pacific Heights, Sunnyside,
-              Morgan, and Rosemary). These fun half-day camps help students build coding, problem-solving,
-              and teamwork skills! Register{" "}
-              <a href="https://ursamajorfrc9180.com/saturday-camps/" target="_blank" rel="noopener noreferrer">
-                here
-              </a>.
+      <Navbar />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <section className="hero-section">
+              <div className={`bg-image ${fade ? 'fade-in' : 'fade-out'}`}
+                style={{ backgroundImage: `url(${backgrounds[currentBg]})` }}></div>
+              <div className="overlay"></div>
+              <div className="hero-text">
+                <p className="hero-subtext">Grandview Heights Secondary School</p>
+                <h1 className="hero-title">Ursa Major 9180 <br /> Robotics</h1>
+                <p className="hero-location">
+                  <MapPin size={20} color="white" />
+                  BC, Canada
+                </p>
+              </div>
+            </section>
+            {/* ABOUT SECTION */}
+            <section className="about-section">
+              <div className="about-text">
+                <h2>General Information</h2>
+                <p>
+                  We are Ursa Major 9180 — the robotics team of Grandview Heights Secondary School in Surrey, BC.
+                  This team was formed in 2022, and we compete in the FIRST Robotics Competition (FRC) as well as
+                  the FIRST Lego League (FLL). Our FRC team consists of students grade 9–12 while the FLL team
+                  consists of grade 8 students.
+                </p>
+              </div>
               <br />
-              <br />
-              <br />
-            </p>
-          </div>
-        </div>
-      </section>
+              <div className="about-carousel">
+                <img
+                  src={slides[currentSlide]}
+                  alt="Team carousel"
+                  className={`carousel-image ${slideFade ? 'fade-in' : 'fade-out'}`}
+                />
+              </div>
+            </section>
+            {/* SATURDAY CAMPS SECTION */}
+            <section className="content-section alt mirror-section">
+              <div className="about-section mirror-layout">
+                <div className="about-carousel">
+                  <img
+                    src={campSlides[currentCampSlide]}
+                    alt="Saturday Camp carousel"
+                    className={`carousel-image ${campSlideFade ? 'fade-in' : 'fade-out'}`}
+                  />
+                </div>
+                <div className="about-text">
+                  <h2>Saturday Camps</h2>
+                  <p>
+                    Our Saturday Camps are back in session! Ursa Major is hosting Saturday LEGO Robotics Camps
+                    for students from Grandview Heights' Family of Schools (Edgewood, Pacific Heights, Sunnyside,
+                    Morgan, and Rosemary). These fun half-day camps help students build coding, problem-solving,
+                    and teamwork skills! Register{" "}
+                    <a href="https://ursamajorfrc9180.com/saturday-camps/" target="_blank" rel="noopener noreferrer">
+                      here
+                    </a>.
+                    <br />
+                    <br />
+                    <br />
+                  </p>
+                </div>
+              </div>
+            </section>
+          </>
+        } />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/first" element={<div style={{padding:40}}><h2>About FIRST®</h2><p>Info about FIRST® goes here.</p></div>} />
+        <Route path="/frc" element={<div style={{padding:40}}><h2>Our FRC Team</h2><p>Info about FRC team goes here.</p></div>} />
+        <Route path="/fll" element={<div style={{padding:40}}><h2>Our FLL Team</h2><p>Info about FLL team goes here.</p></div>} />
+        <Route path="/sponsors" element={<div style={{padding:40}}><h2>Sponsors</h2><p>Info about sponsors goes here.</p></div>} />
+        <Route path="/social" element={<div style={{padding:40}}><h2>Social Handles</h2><p>Info about social handles goes here.</p></div>} />
+      </Routes>
       <Footer />
     </div>
   );
