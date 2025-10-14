@@ -14,7 +14,6 @@ import slide1 from './images/slide1.jpg';
 import slide2 from './images/slide2.jpg';
 import slide3 from './images/slide3.jpeg';
 
-// NEW: Saturday Camp carousel images
 import camp1 from './images/camp1.jpg';
 import camp2 from './images/camp2.png';
 import camp3 from './images/camp3.png';
@@ -22,18 +21,16 @@ import camp3 from './images/camp3.png';
 function App() {
   const backgrounds = [bg1, bg2, bg3];
   const slides = [slide1, slide2, slide3];
-  const campSlides = [camp1, camp2, camp3]; // separate camp images
+  const campSlides = [camp1, camp2, camp3]; 
 
   const [currentBg, setCurrentBg] = useState(0);
   const [fade, setFade] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slideFade, setSlideFade] = useState(true);
 
-  // new state for the Saturday Camp carousel
   const [currentCampSlide, setCurrentCampSlide] = useState(0);
   const [campSlideFade, setCampSlideFade] = useState(true);
 
-  // Background rotation
   useEffect(() => {
     const interval = setInterval(() => {
       setFade(false);
@@ -45,7 +42,6 @@ function App() {
     return () => clearInterval(interval);
   }, [backgrounds.length]);
 
-  // About section carousel
   useEffect(() => {
     const interval = setInterval(() => {
       setSlideFade(false);
@@ -57,7 +53,6 @@ function App() {
     return () => clearInterval(interval);
   }, [slides.length]);
 
-  // Saturday Camps carousel
   useEffect(() => {
     const interval = setInterval(() => {
       setCampSlideFade(false);
@@ -88,7 +83,6 @@ function App() {
                 </p>
               </div>
             </section>
-            {/* ABOUT SECTION */}
             <section className="about-section">
               <div className="about-text">
                 <h2>General Information</h2>
@@ -108,7 +102,6 @@ function App() {
                 />
               </div>
             </section>
-            {/* SATURDAY CAMPS SECTION */}
             <section className="content-section alt mirror-section">
               <div className="about-section mirror-layout">
                 <div className="about-carousel">
@@ -139,10 +132,9 @@ function App() {
         } />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/first" element={<div style={{padding:40}}><h2>About FIRST®</h2><p>Info about FIRST® goes here.</p></div>} />
-        <Route path="/frc" element={<div style={{padding:40}}><h2>Our FRC Team</h2><p>Info about FRC team goes here.</p></div>} />
-        <Route path="/fll" element={<div style={{padding:40}}><h2>Our FLL Team</h2><p>Info about FLL team goes here.</p></div>} />
         <Route path="/sponsors" element={<div style={{padding:40}}><h2>Sponsors</h2><p>Info about sponsors goes here.</p></div>} />
         <Route path="/social" element={<div style={{padding:40}}><h2>Social Handles</h2><p>Info about social handles goes here.</p></div>} />
+        <Route path="/additional" element={<div style={{padding:40}}><h2>Additional Resources</h2><p>Info about sponsors goes here.</p></div>} />
       </Routes>
       <Footer />
     </div>

@@ -182,7 +182,6 @@
   transition: color 0.2s;
 }
 
-/* underline hover + active effect */
 .navbar-menu li::after {
   content: "";
   position: absolute;

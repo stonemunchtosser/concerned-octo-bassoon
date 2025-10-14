@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./AboutUs.css"; // renamed file so it’s unique
+import { Link } from "react-router-dom"; 
+import "./AboutUs.css";
 import Navbar from "./Navbar";
-import Footer from "./Footer";
 import bg1 from "../images/bearconsimage.jpg";
 
 export default function AboutUs() {
@@ -24,7 +24,6 @@ export default function AboutUs() {
             About <br /> Ursa Major 9180
           </h1>
 
-          {/* Collapsible Sections */}
           <div className="aboutpage-collapsible-sections">
             <div
               className="aboutpage-collapsible"
@@ -33,24 +32,54 @@ export default function AboutUs() {
               <h2>+ FRC Team</h2>
               {openSection === "story" && (
                 <p>
-                Our team has been competing since 2023, participating in Charged UP, 
-                Crescendo, and soon, Reefscape. Each year, we compete at the Canadian 
-                Pacific Regional, which was previously held at the Save-On-Foods 
-                Memorial Centre in Victoria, BC. Starting in 2025, however, the event 
-                will take place at the Pacific Coliseum in Vancouver, BC. At the 
-                Canadian Pacific Regional, around 30 to 50 teams from across the world 
-                participate annually. <br /><br />During our first season, 
-                Charged UP, we ranked #5 overall and reached the finals alongside our 
-                alliance partners 4253 and 8338. We also advanced to the World Championships 
-                in Houston, Texas, where we competed against hundreds of the best teams 
-                from around the globe. To learn more about our Charged UP season, click here. <br /><br />
-                In our second season, Crescendo, we ranked #6 overall and became Alliance 
-                Captain #4, allowing us to select our own alliance partners—6390 and 9449. 
-                Although we didn’t advance as far as we hoped, we gained valuable experience 
-                and learned how to improve in future competitions. To learn more about our 
-                Crescendo season, click here. <br /><br /> Our third season is the current challenge, 
-                Reefscape, where teams must place coral onto reefs and remove algae to maintain 
-                them. To learn more about Reefscape, click here.
+                  Our team has been competing since 2023, participating in{" "}
+                  <strong>Charged UP</strong>, <strong>Crescendo</strong>, and{" "}
+                  <strong>Reefscape</strong>. We compete at the{" "}
+                  <strong>Canadian Pacific Regional</strong> every year, which
+                  was previously held at the Save-On-Foods Memorial Centre in
+                  Victoria and, starting in 2025, now takes place at the{" "}
+                  <strong>Pacific Coliseum</strong> in Vancouver, BC. Around 30
+                  to 50 teams from across the world participate annually.
+                  <br />
+                  <br />
+                  During our first season, Charged UP, we ranked #5 overall and
+                  reached the finals alongside our alliance partners 4253 and
+                  8338. We also advanced to the World Championships in Houston,
+                  Texas. To learn more about our Charged UP season, click{" "}
+                  <Link
+                    to="/chargedup"
+                    style={{ color: "#00ff66", textDecoration: "none" }}
+                  >
+                    here
+                  </Link>
+                  .
+                  <br />
+                  <br />
+                  In our second season, Crescendo, we ranked #6 overall and
+                  became Alliance Captain #4, allowing us to select our own
+                  alliance partners—6390 and 9449. Although we didn’t advance as
+                  far as we hoped, we gained valuable experience for the future.
+                  To learn more about our Crescendo season, click{" "}
+                  <Link
+                    to="/crescendo"
+                    style={{ color: "#00ff66", textDecoration: "none" }}
+                  >
+                    here
+                  </Link>
+                  .
+                  <br />
+                  <br />
+                  Our third season is the current challenge,{" "}
+                  <strong>Reefscape</strong>, where teams must place coral onto
+                  reefs and remove algae to maintain them. To learn more about
+                  Reefscape, click{" "}
+                  <Link
+                    to="/reefscape"
+                    style={{ color: "#00ff66", textDecoration: "none" }}
+                  >
+                    here
+                  </Link>
+                  .
                 </p>
               )}
             </div>
@@ -59,13 +88,28 @@ export default function AboutUs() {
               className="aboutpage-collapsible"
               onClick={() => toggleSection("mission")}
             >
-              <h2>+ Our Mission</h2>
+              <h2>+ FLL Team</h2>
               {openSection === "mission" && (
                 <p>
-                  At Ursa Major, we strive to make STEM approachable and
-                  exciting. Through workshops, LEGO Robotics Camps, and outreach
-                  events, our goal is to spark curiosity and help students
-                  discover teamwork and innovation.
+                  The FIRST LEGO League (FLL) is a robotics program organized by
+                  FIRST Robotics, designed to introduce children ages 4–14 to
+                  the world of robotics and STEM learning.
+                  <br />
+                  <br /> We’re proud to have hosted FLL teams at our school for
+                  the past three years. Our two teams are 49449 and 49371.
+                  <br />
+                  <br /> During the 2022–2023 “Superpowered” season, our
+                  all-girls team of seven members earned the Core Values Award
+                  at the Lower Mainland Qualifier 2.
+                  <br />
+                  <br /> In the following “Masterpiece” season, we expanded to
+                  two FLL teams with a total of 15 members, and both teams
+                  advanced to regionals in Maple Ridge.
+                  <br />
+                  <br /> For the 2024–2025 “Submerged” season, we had two teams
+                  with 11 members in total, and in 2025, we were proud to host
+                  the Lower Mainland Qualifier 2 at our school with 20 FLL teams
+                  from across the region!
                 </p>
               )}
             </div>
@@ -74,23 +118,12 @@ export default function AboutUs() {
               className="aboutpage-collapsible"
               onClick={() => toggleSection("values")}
             >
-              <h2>+ Our Core Values</h2>
+              <h2>+ Third Section Idk Yet</h2>
               {openSection === "values" && (
-                <ul className="aboutpage-values-list">
-                  <li>
-                    <strong>Teamwork</strong> — We achieve more together.
-                  </li>
-                  <li>
-                    <strong>Innovation</strong> — We approach challenges
-                    creatively.
-                  </li>
-                  <li>
-                    <strong>Community</strong> — We inspire future engineers.
-                  </li>
-                  <li>
-                    <strong>Gracious Professionalism</strong> — We respect all.
-                  </li>
-                </ul>
+                <p>
+                  not sure if we have anything else to put yet but imma just
+                  leave this here until further notice
+                </p>
               )}
             </div>
           </div>
