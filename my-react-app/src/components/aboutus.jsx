@@ -114,18 +114,6 @@ export default function AboutUs() {
               )}
             </div>
 
-            <div
-              className="aboutpage-collapsible"
-              onClick={() => toggleSection("values")}
-            >
-              <h2>+ Third Section Idk Yet</h2>
-              {openSection === "values" && (
-                <p>
-                  not sure if we have anything else to put yet but imma just
-                  leave this here until further notice
-                </p>
-              )}
-            </div>
           </div>
         </div>
       </section>
