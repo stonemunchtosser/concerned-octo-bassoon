@@ -111,11 +111,11 @@ export default function Navbar() {
                   About Us
                 </Link>
               </li>
-              <li
-                className={active === "About FIRST®" ? "active" : ""}
-              >
-                <Link
-                  to="/first"
+              <li className={active === "About FIRST®" ? "active" : ""}>
+                <a
+                  href="https://www.firstinspires.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     textDecoration: "none",
                     color: "inherit",
@@ -123,7 +123,7 @@ export default function Navbar() {
                   }}
                 >
                   About FIRST®
-                </Link>
+                </a>
               </li>
               <li
                 className={active === "Sponsors" ? "active" : ""}

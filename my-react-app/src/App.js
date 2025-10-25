@@ -84,7 +84,8 @@ function App() {
               </div>
             </section>
             <section className="about-section">
-              <div className="about-text">
+              <div className="about-text" style={{ marginTop: '20px' }}>
+                <br />
                 <h2>General Information</h2>
                 <p>
                   We are Ursa Major 9180 — the robotics team of Grandview Heights Secondary School in Surrey, BC.
@@ -94,13 +95,17 @@ function App() {
                 </p>
               </div>
               <br />
-              <div className="about-carousel">
+              <div
+                className="about-carousel"
+                style={{ marginTop: '60px' }} 
+              >
                 <img
                   src={slides[currentSlide]}
                   alt="Team carousel"
                   className={`carousel-image ${slideFade ? 'fade-in' : 'fade-out'}`}
                 />
               </div>
+
             </section>
             <section className="content-section alt mirror-section">
               <div className="about-section mirror-layout">
