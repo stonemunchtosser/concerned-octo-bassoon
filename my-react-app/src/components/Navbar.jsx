@@ -27,7 +27,7 @@ export default function Navbar() {
         setActive("Social Handles");
         break;
       case "/additional-resources":
-        setActive("Social Handles");
+        setActive("Additional Resources");
         break;
       default:
         setActive("");
@@ -157,7 +157,7 @@ export default function Navbar() {
                 className={active === "Additional Resources" ? "active" : ""}
               >
                 <Link
-                  to="/frc"
+                  to="/additional-resources"
                   style={{
                     textDecoration: "none",
                     color: "inherit",

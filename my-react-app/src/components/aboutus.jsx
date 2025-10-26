@@ -69,7 +69,7 @@ export default function AboutUs() {
               <p>
                 In our second year competing in the FIRST Robotics Competition, we took part in the Crescendo season.
                 This year’s game featured foam rings called “notes,” which teams had to score in either the amplifier or the speaker.
-                If you're curious about the specifics of the game, please can check out the official animation{" "} 
+                If you're curious about the specifics of the game, please can check out the official animation {" "} 
                 <span
                   style={{ color: "#00ff66", textDecoration: "none", cursor: "pointer" }}
                   onClick={() =>

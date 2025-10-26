@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import { Routes, Route } from 'react-router-dom';
 import AboutUs from './components/aboutus';
+import Sponsors from './components/Sponsors';
 import { MapPin } from 'lucide-react';
 import Footer from "./components/Footer";
 
@@ -137,9 +138,9 @@ function App() {
         } />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/first" element={<div style={{padding:40}}><h2>About FIRST®</h2><p>Info about FIRST® goes here.</p></div>} />
-        <Route path="/sponsors" element={<div style={{padding:40}}><h2>Sponsors</h2><p>Info about sponsors goes here.</p></div>} />
+        <Route path="/sponsors" element={<Sponsors />} />
         <Route path="/social" element={<div style={{padding:40}}><h2>Social Handles</h2><p>Info about social handles goes here.</p></div>} />
-        <Route path="/additional" element={<div style={{padding:40}}><h2>Additional Resources</h2><p>Info about sponsors goes here.</p></div>} />
+        <Route path="/additional-resources" element={<div style={{padding:40}}><h2>Additional Resources</h2><p>Info about additional resources goes here.</p></div>} />
       </Routes>
       <Footer />
     </div>

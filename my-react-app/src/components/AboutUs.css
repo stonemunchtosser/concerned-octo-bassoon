@@ -23,7 +23,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: brightness(0.85);
   z-index: 1;
 }
 
@@ -170,5 +171,3 @@
 .video-link {
   display: none;
 }
-
-
