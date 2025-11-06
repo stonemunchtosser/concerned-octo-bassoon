@@ -23,8 +23,8 @@ export default function Navbar() {
       case "/sponsors":
         setActive("Sponsors");
         break;
-      case "/social":
-        setActive("Social Handles");
+      case "/team-members":
+        setActive("Team Members & Credits");
         break;
       case "/additional-resources":
         setActive("Additional Resources");
@@ -48,10 +48,6 @@ export default function Navbar() {
           </div>
 
           <div className={`navbar-right ${menuOpen ? "open" : ""}`}>
-            <div className="navbar-item">
-              <Calendar size={18} />
-              <span>Events</span>
-            </div>
             <div className="navbar-item">
               <Phone size={18} />
               <span>Contact Us</span>
@@ -140,17 +136,17 @@ export default function Navbar() {
                 </Link>
               </li>
               <li
-                className={active === "Social Handles" ? "active" : ""}
+                className={active === "Team Members & Credits" ? "active" : ""}
               >
                 <Link
-                  to="/social"
+                  to="/team-members"
                   style={{
                     textDecoration: "none",
                     color: "inherit",
                     font: "inherit",
                   }}
                 >
-                  Social Handles
+                  Team Members & Credits
                 </Link>
               </li>
               <li

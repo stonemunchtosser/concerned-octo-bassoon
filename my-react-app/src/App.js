@@ -4,6 +4,8 @@ import Navbar from './components/Navbar';
 import { Routes, Route } from 'react-router-dom';
 import AboutUs from './components/aboutus';
 import Sponsors from './components/Sponsors';
+import TeamMembers from './components/teamMembers'; 
+import AdditionalResources from './components/additionalResources';
 import { MapPin } from 'lucide-react';
 import Footer from "./components/Footer";
 
@@ -127,9 +129,7 @@ function App() {
                     <a href="https://ursamajorfrc9180.com/saturday-camps/" target="_blank" rel="noopener noreferrer">
                       here
                     </a>.
-                    <br />
-                    <br />
-                    <br />
+                    <br /><br /><br />
                   </p>
                 </div>
               </div>
@@ -139,8 +139,8 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/first" element={<div style={{padding:40}}><h2>About FIRST®</h2><p>Info about FIRST® goes here.</p></div>} />
         <Route path="/sponsors" element={<Sponsors />} />
-        <Route path="/social" element={<div style={{padding:40}}><h2>Social Handles</h2><p>Info about social handles goes here.</p></div>} />
-        <Route path="/additional-resources" element={<div style={{padding:40}}><h2>Additional Resources</h2><p>Info about additional resources goes here.</p></div>} />
+        <Route path="/team-members" element={<TeamMembers />} /> 
+        <Route path="/additional-resources" element={<AdditionalResources />} />
       </Routes>
       <Footer />
     </div>

@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import "../App.css";
 import "../components/Sponsors.css";
 
-import heroImage from "../images/bg1.jpg"; 
+import heroImage from "../images/sponsorsbg.jpg"; 
 
 import wingsbadminton from "../images/sponsor1.webp";
 import sponsor2 from "../images/sponsor2.jpg";
