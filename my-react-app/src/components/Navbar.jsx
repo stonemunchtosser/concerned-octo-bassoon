@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
-import { Search, Calendar, Phone, Handshake } from "lucide-react";
+import { Search, Phone, Handshake } from "lucide-react";
 import UrsaLogo from "../images/ursamajorbearlogo.png";
 
 export default function Navbar() {
@@ -26,8 +26,8 @@ export default function Navbar() {
       case "/team-members":
         setActive("Team Members & Credits");
         break;
-      case "/additional-resources":
-        setActive("Additional Resources");
+      case "/lego-workshops":
+        setActive("LEGO Workshops");
         break;
       default:
         setActive("");
@@ -150,17 +150,17 @@ export default function Navbar() {
                 </Link>
               </li>
               <li
-                className={active === "Additional Resources" ? "active" : ""}
+                className={active === "LEGO Workshops" ? "active" : ""}
               >
                 <Link
-                  to="/additional-resources"
+                  to="/lego-workshops"
                   style={{
                     textDecoration: "none",
                     color: "inherit",
                     font: "inherit",
                   }}
                 >
-                  Additional Resources
+                  LEGO Workshops
                 </Link>
               </li>
             </ul>

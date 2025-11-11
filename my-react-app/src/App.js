@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import AboutUs from './components/aboutus';
 import Sponsors from './components/Sponsors';
 import TeamMembers from './components/teamMembers'; 
-import AdditionalResources from './components/additionalResources';
+import LegoWorkshops from './components/legoWorkshops';
 import { MapPin } from 'lucide-react';
 import Footer from "./components/Footer";
 
@@ -140,7 +140,7 @@ function App() {
         <Route path="/first" element={<div style={{padding:40}}><h2>About FIRST®</h2><p>Info about FIRST® goes here.</p></div>} />
         <Route path="/sponsors" element={<Sponsors />} />
         <Route path="/team-members" element={<TeamMembers />} /> 
-        <Route path="/additional-resources" element={<AdditionalResources />} />
+        <Route path="/lego-workshops" element={<LegoWorkshops />} />
       </Routes>
       <Footer />
     </div>

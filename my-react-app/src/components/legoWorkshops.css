@@ -1,0 +1,193 @@
+.lego-page .workshop-image-wrap img {
+  width: 180% !important;
+  max-width: none;
+  transform: translateX(-55%);
+  margin-right: 3.125vw;
+  height: 24.5vh;
+  object-fit: cover;
+  border-radius: 0.52vw;
+  display: block;
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .lego-page .workshop-image-wrap img {
+    width: 100% !important;
+    margin-left: 0;
+    height: 20.4vh;
+  }
+}
+
+.lego-page .signup-form-full {
+  width: 100%;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.lego-page .signup-form-full iframe {
+  width: 100vw;
+  height: 90vh;
+  border: 0;
+  display: block;
+  margin-left: calc(50% - 50vw);
+}
+
+@media (max-width: 900px) {
+  .lego-page .signup-form-full iframe {
+    height: 70vh;
+  }
+}
+
+.lego-page .lego-hero {
+  display: grid;
+  grid-template-columns: 1fr 21.9vw;
+  align-items: center;
+  gap: 1.04vw;
+  padding: 3rem 1.5rem;
+  background-image: url("../images/sponsorsbg.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #f4f5f7;
+}
+
+.lego-page .lego-hero-left {
+  padding: 2rem;
+}
+
+.lego-page .lego-hero-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lego-page .lego-info-box {
+  background: rgba(255, 255, 255, 0.95);
+  color: #111827;
+  padding: 1.25rem;
+  border-radius: 0.625vw;
+  box-shadow: 0 1.25vh 6vh rgba(0, 0, 0, 0.12);
+  max-width: 21.9vw;
+}
+
+.lego-page .aboutpage-collapsible-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0.52vw;
+  margin-top: 1rem;
+  padding-right: 1rem;
+}
+
+.lego-page .aboutpage-collapsible {
+  border-bottom: 0.05rem solid rgba(255, 255, 255, 0.4);
+  padding: 1.25rem 0;
+  cursor: pointer;
+  opacity: 0.85;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.lego-page .aboutpage-collapsible h2 {
+  font-size: 1.6rem;
+  margin: 0;
+  color: white;
+  transition: color 0.25s;
+  user-select: none;
+  opacity: 0.85;
+}
+
+.lego-page .aboutpage-collapsible:hover h2 {
+  color: #3bf354;
+}
+
+.lego-page .aboutpage-collapsible p,
+.lego-page .aboutpage-values-list {
+  background: #0000008c;
+  border-radius: 0.625vw;
+  padding: 1vw;
+  margin-top: 0.42vw;
+  color: white;
+  line-height: 1.6;
+  backdrop-filter: blur(0.21vw);
+  box-shadow: 0 0.21vw 0.78vw rgba(0, 0, 0, 0.28);
+  font-size: 1rem;
+  opacity: 0.95;
+  transition: all 0.25s ease-in-out;
+}
+
+.lego-page .aboutpage-values-list li {
+  margin-bottom: 0.42vw;
+}
+
+.lego-page .aboutpage-collapsible p {
+  padding-left: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  .lego-page .lego-hero {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+  .lego-page .lego-hero-right {
+    justify-content: stretch;
+  }
+  .lego-page .lego-info-box {
+    max-width: 100%;
+  }
+  .lego-page .aboutpage-collapsible-sections {
+    padding-right: 0.5rem;
+  }
+}
+
+.lego-page .lego-side-panel {
+  position: absolute;
+  right: 10%;
+  top: 48%;
+  transform: translateY(-50%) translateX(-2%);
+  width: 33.8vw;
+  max-width: 90vw;
+  background: transparent;
+  padding: 0.26vw 0;
+  border-radius: 0.625vw;
+  box-shadow: none;
+  z-index: 4;
+}
+
+@media (max-width: 900px) {
+  .lego-page .lego-side-panel {
+    position: static;
+    transform: none;
+    margin: 1.5rem;
+    width: auto;
+  }
+  .lego-page .hero-text {
+    left: 5%;
+    top: 12%;
+    transform: none;
+  }
+}
+
+.lego-page .hero-section .hero-text {
+  left: 9%;
+  top: 49.5%;
+  transform: translateY(-50%);
+  max-width: 44%;
+  text-align: left;
+  z-index: 3;
+}
+
+@media (max-width: 1024px) {
+  .lego-page .hero-section .hero-text {
+    max-width: 100%;
+    left: 5%;
+    top: 20%;
+    transform: none;
+  }
+}
+
+.hero-title2 {
+  font-size: 6rem;
+  font-weight: 900;
+  line-height: 1;
+  margin: 0;
+  opacity: 0.85;
+}
+
