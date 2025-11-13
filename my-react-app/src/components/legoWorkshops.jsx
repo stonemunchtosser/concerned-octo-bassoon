@@ -3,7 +3,7 @@ import "../App.css";
 import "./legoWorkshops.css"; 
 
 import { useState } from "react";
-import img1 from "../images/firsthoustonimage.jpeg";
+import img1 from "../images/workshopbgimage.jpg";
 
 export default function LegoWorkshops() {
   const [openSection, setOpenSection] = useState(null);
@@ -71,7 +71,7 @@ export default function LegoWorkshops() {
             >
               <h2>+ Sign Up Form</h2>
               {openSection === "faq" && (
-                <div style={{ marginTop: "1rem", opacity: 0.8 }}>
+                <div style={{ marginTop: "1rem", opacity: 0.8 }}> 
                   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdHmA4sVxTdG-tz2lBH_vvXIeVfJjB9OfcVBP_CYGTE-qIb_w/viewform?embedded=true" 
                   width="540" height="616" frameborder="0" marginheight="0" marginwidth="0" title = "titles r stupid but im adding one to please ts">Loading…</iframe>
                     </div>

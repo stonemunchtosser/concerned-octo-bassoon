@@ -46,7 +46,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} Ursa Major 9180 Robotics. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Ursa Major 9180 Robotics, made by Hexuan (Nina) Liu. All rights reserved.</p>
       </div>
     </footer>
   );

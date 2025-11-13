@@ -91,7 +91,7 @@
   color: white;
   transition: color 0.25s;
   user-select: none;
-  opacity: 0.85;
+  opacity: 0.85; 
 }
 
 .lego-page .aboutpage-collapsible:hover h2 {
@@ -161,7 +161,7 @@
   .lego-page .hero-text {
     left: 5%;
     top: 12%;
-    transform: none;
+    transform: none; 
   }
 }
 

@@ -34,6 +34,14 @@ export default function Navbar() {
     }
   }, [location]);
 
+  const handleContactClick = () => {
+    const subject = encodeURIComponent("A Message (from Ursa Major 9180 Website)");
+    const body = encodeURIComponent(
+      "[Replace with your message. Feel free to add an attachment.]\n\nBest regards,\n[Your name and organization]"
+    );
+    window.location.href = `mailto:ghs.ursa.major@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-inner">
@@ -48,9 +56,9 @@ export default function Navbar() {
           </div>
 
           <div className={`navbar-right ${menuOpen ? "open" : ""}`}>
-            <div className="navbar-item">
+            <div className="navbar-item" onClick={handleContactClick}>
               <Phone size={18} />
-              <span>Contact Us</span>
+              <span>Contact Us (Open w/Email)</span>
             </div>
             <div className="navbar-item">
               <Handshake size={18} />
@@ -79,9 +87,7 @@ export default function Navbar() {
               <span className="subtext">URSA MAJOR 9180</span>
             </div>
             <ul className="navbar-menu">
-              <li
-                className={active === "Home Page" ? "active" : ""}
-              >
+              <li className={active === "Home Page" ? "active" : ""}>
                 <Link
                   to="/"
                   style={{
@@ -93,9 +99,7 @@ export default function Navbar() {
                   Home Page
                 </Link>
               </li>
-              <li
-                className={active === "About Us" ? "active" : ""}
-              >
+              <li className={active === "About Us" ? "active" : ""}>
                 <Link
                   to="/about"
                   style={{
@@ -121,9 +125,7 @@ export default function Navbar() {
                   About FIRST®
                 </a>
               </li>
-              <li
-                className={active === "Sponsors" ? "active" : ""}
-              >
+              <li className={active === "Sponsors" ? "active" : ""}>
                 <Link
                   to="/sponsors"
                   style={{
@@ -149,9 +151,7 @@ export default function Navbar() {
                   Team Members & Credits
                 </Link>
               </li>
-              <li
-                className={active === "LEGO Workshops" ? "active" : ""}
-              >
+              <li className={active === "LEGO Workshops" ? "active" : ""}>
                 <Link
                   to="/lego-workshops"
                   style={{
