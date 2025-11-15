@@ -17,6 +17,8 @@ import argosy from "../images/argosy.png";
 import finning from "../images/finning.jpg";
 import homelife from "../images/homelife.png";
 
+import SponsorshipPackage2526 from "../images/SponsorshipPackage2526.pdf";
+
 export default function Sponsors() {
 
   const [activeYear, setActiveYear] = useState("2025");
@@ -98,7 +100,11 @@ export default function Sponsors() {
               ghs.ursa.major@gmail.com or by submitting a form through the Sponsor Us section. 
             </p>
             
-            <a href="#download" className="sponsors-download-btn">
+            <a 
+              href={SponsorshipPackage2526}
+              download="SponsorshipPackage2526"
+              className="sponsors-download-btn"
+            >
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 width="16" 
