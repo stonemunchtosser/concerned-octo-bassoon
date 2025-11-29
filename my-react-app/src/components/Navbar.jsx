@@ -65,6 +65,13 @@ export default function Navbar() {
             </div>
 
             <div className={`navbar-right ${menuOpen ? "open" : ""}`}>
+              <button
+                className="mobile-close"
+                onClick={() => setMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                ×
+              </button>
               <div className="navbar-item" onClick={handleContactClick}>
                 <Phone size={18} />
                 <span>Contact Us</span>
@@ -203,8 +210,6 @@ export default function Navbar() {
               Thank you for your interest in sponsoring Ursa Major 9180! Please
               download the sponsorship packet below and then fill out the form if
               you're interested in sponsoring us; we'll be in touch soon.
-            </p>
-            <p>
             <a
               href={SponsorshipPackage2526}
               download="SponsorshipPackage2526"
@@ -233,7 +238,7 @@ export default function Navbar() {
             <iframe
               src="https://docs.google.com/forms/d/e/1FAIpQLSdh1TzjMFFvFMRVgju4GRjtjVUKcbO99YYn0Hot5HYZOixe_Q/viewform?embedded=true"
               width="480"
-              height="350"
+              height="300"
               frameBorder="0"
               marginHeight="0"
               marginWidth="0"

@@ -16,6 +16,7 @@ import twesha from "../images/twesha.png";
 import teamdriver from "../images/teamdriver.jpg";
 import tyler from "../images/tyler.png";
 import noimagegiven from "../images/noimaginegiven.jpg";
+import mugshot from "../images/mugshot.jpg";
 
 const teamData = [
   {
@@ -79,8 +80,8 @@ const teamData = [
     id: 9,
     name: "Anhad Ghai",
     role: "Significant Programming (Robot) Contributor",
-    description: "Did not provide a description nor an image.",
-    image: noimagegiven,
+    description: "Contributor to projects in the coding, build, and electrical fields; contributed to coding the servo drive, building robot bumpers and the intake, and volunteering at an FLL tournament",
+    image: mugshot,
   },
   {
     id: 10,
@@ -170,7 +171,6 @@ const TeamMembers = () => {
         </div>
       </section>
 
-      {/* Team cards */}
       <section className="container">
         <motion.div
           className="grid"

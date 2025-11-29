@@ -51,8 +51,8 @@ function App() {
       setTimeout(() => {
         setCurrentSlide((prev) => (prev + 1) % slides.length);
         setSlideFade(true);
-      }, 800);
-    }, 4000);
+      }, 1000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [slides.length]);
 
@@ -62,8 +62,8 @@ function App() {
       setTimeout(() => {
         setCurrentCampSlide((prev) => (prev + 1) % campSlides.length);
         setCampSlideFade(true);
-      }, 800);
-    }, 4000);
+      }, 1000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [campSlides.length]);
 
