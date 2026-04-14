@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.69013b08.css",
-    "main.js": "/static/js/main.e8d046cc.js",
+    "main.css": "/static/css/main.31bb7fb1.css",
+    "main.js": "/static/js/main.73a77e3c.js",
     "static/js/453.311b3dbc.chunk.js": "/static/js/453.311b3dbc.chunk.js",
-    "static/media/bearconsimage.jpg": "/static/media/bearconsimage.09c8748ee3b35fc02f36.jpg",
+    "static/media/bearconsimage.png": "/static/media/bearconsimage.8347f9b3a2e339bd57b3.png",
     "static/media/SponsorshipPackage2526.pdf": "/static/media/SponsorshipPackage2526.831376b44d69cba1ac10.pdf",
     "static/media/bg2.png": "/static/media/bg2.5ef8e4d3da08f4d9a241.png",
     "static/media/bg1.jpg": "/static/media/bg1.215fc39a76113f12dc18.jpg",
@@ -42,12 +42,12 @@
     "static/media/sponsor7.jpg": "/static/media/sponsor7.5c3f687fe478a1f32322.jpg",
     "static/media/sponsor6.png": "/static/media/sponsor6.240f1ec904b3a208e531.png",
     "index.html": "/index.html",
-    "main.69013b08.css.map": "/static/css/main.69013b08.css.map",
-    "main.e8d046cc.js.map": "/static/js/main.e8d046cc.js.map",
+    "main.31bb7fb1.css.map": "/static/css/main.31bb7fb1.css.map",
+    "main.73a77e3c.js.map": "/static/js/main.73a77e3c.js.map",
     "453.311b3dbc.chunk.js.map": "/static/js/453.311b3dbc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.69013b08.css",
-    "static/js/main.e8d046cc.js"
+    "static/css/main.31bb7fb1.css",
+    "static/js/main.73a77e3c.js"
   ]
 }
