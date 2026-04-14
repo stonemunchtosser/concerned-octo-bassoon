@@ -5,12 +5,10 @@ import "../components/Sponsors.css";
 import pietroauraimg from "../images/pietroaura.png";
 import goodpic from "../images/sparebg.jpg";
 import rohaanphoto from "../images/rohaanphoto.jpg";
-import aikhemaura from "../images/aikhemaura.png";
+import majesticahhsunlight from "../images/majesticahhsunlight.jpg";
 import ravenmogging from "../images/ravenmogging.png";
 import confused1vcx from "../images/confusedninaimage1.jpg";
-import stacyondaleft from "../images/stacyondaleft.jpg";
 import amrin from "../images/amrin.webp";
-import majesticahhsunlight from "../images/majesticahhsunlight.jpg";
 import kevin from "../images/kevin.png";
 import twesha from "../images/twesha.png";
 import teamdriver from "../images/teamdriver.jpg";
@@ -46,15 +44,15 @@ const teamData = [
     name: "Hexuan Liu",
     role: "Admin (Website)",
     description:
-      "Creator of this website, which was made using javaScript. Was briefly a member during Crescendo (2024).",
+      "Sole creator of this website, which was made using JavaScript. Was briefly a member during Crescendo (2024) and again during Rebuilt (2025).",
     image: confused1vcx,
   },
   {
     id: 5,
-    name: "Aikhem Rai",
-    role: "Business Team Lead/Admin (Outreach)",
-    description: "Co-leads the admin team, has gained $1000+ in sponsorships for the team, has been a member since the Crescendo (2024) season.",
-    image: aikhemaura,
+    name: "Asia Bajwa",
+    role: "Admin/FLL Coordinator",
+    description: "Has done sponsorships, organizing FLL, and made the sponsorship package (currently on the Sponsors page). Has been a member since the Charged Up (2023) season.",
+    image: noimagegiven,
   },
     {
     id: 6,

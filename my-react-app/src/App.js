@@ -33,6 +33,17 @@ function App() {
 
   const [currentCampSlide, setCurrentCampSlide] = useState(0);
   const [campSlideFade, setCampSlideFade] = useState(true);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsSmallScreen(window.innerWidth < 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -79,7 +90,13 @@ function App() {
               <div className="overlay"></div>
               <div className="hero-text">
                 <p className="hero-subtext">Grandview Heights Secondary School</p>
-                <h1 className="hero-title">Ursa Major 9180 <br /> Robotics</h1>
+                <h1 className="hero-title">
+                  {isSmallScreen ? (
+                    <>Ursa Major <br /> Robotics</>
+                  ) : (
+                    <>Ursa Major 9180 <br /> Robotics</>
+                  )}
+                </h1>
                 <p className="hero-location">
                   <MapPin size={20} color="white" />
                   BC, Canada
