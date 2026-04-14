@@ -52,6 +52,12 @@ export default function Navbar() {
 
   return (
     <>
+      {menuOpen && (
+        <div 
+          className="mobile-menu-backdrop" 
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
       <nav className="navbar">
         <div className="navbar-inner">
           <div className="navbar-top">
@@ -65,13 +71,6 @@ export default function Navbar() {
             </div>
 
             <div className={`navbar-right ${menuOpen ? "open" : ""}`}>
-              <button
-                className="mobile-close"
-                onClick={() => setMenuOpen(false)}
-                aria-label="Close menu"
-              >
-                ×
-              </button>
               <div className="navbar-item" onClick={handleContactClick}>
                 <Phone size={18} />
                 <span>Contact Us</span>
@@ -107,7 +106,7 @@ export default function Navbar() {
                 />
                 <span className="subtext">URSA MAJOR 9180</span>
               </div>
-              <ul className="navbar-menu">
+              <ul className={`navbar-menu ${menuOpen ? "mobile-open" : ""}`}>
                 <li className={active === "Home Page" ? "active" : ""}>
                   <Link
                     to="/"
@@ -185,6 +184,102 @@ export default function Navbar() {
                   </Link>
                 </li>
               </ul>
+              <div className={`mobile-dropdown ${menuOpen ? "open" : ""}`}>
+                <ul className="mobile-dropdown-list">
+                  <li className={active === "Home Page" ? "active" : ""}>
+                    <Link
+                      to="/"
+                      onClick={() => setMenuOpen(false)}
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                        font: "inherit",
+                      }}
+                    >
+                      Home Page
+                    </Link>
+                  </li>
+                  <li className={active === "About Us" ? "active" : ""}>
+                    <Link
+                      to="/about"
+                      onClick={() => setMenuOpen(false)}
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                        font: "inherit",
+                      }}
+                    >
+                      About Us
+                    </Link>
+                  </li>
+                  <li className={active === "About FIRST®" ? "active" : ""}>
+                    <a
+                      href="https://www.firstinspires.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                        font: "inherit",
+                      }}
+                    >
+                      About FIRST®
+                    </a>
+                  </li>
+                  <li className={active === "Sponsors" ? "active" : ""}>
+                    <Link
+                      to="/sponsors"
+                      onClick={() => setMenuOpen(false)}
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                        font: "inherit",
+                      }}
+                    >
+                      Sponsors
+                    </Link>
+                  </li>
+                  <li className={active === "Team Members & Credits" ? "active" : ""}>
+                    <Link
+                      to="/team-members"
+                      onClick={() => setMenuOpen(false)}
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                        font: "inherit",
+                      }}
+                    >
+                      Team Members & Credits
+                    </Link>
+                  </li>
+                  <li className={active === "LEGO Workshops" ? "active" : ""}>
+                    <Link
+                      to="/lego-workshops"
+                      onClick={() => setMenuOpen(false)}
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                        font: "inherit",
+                      }}
+                    >
+                      LEGO Workshops
+                    </Link>
+                  </li>
+                  <li className="dropdown-divider"></li>
+                  <li className="mobile-dropdown-item" onClick={() => { handleContactClick(); setMenuOpen(false); }}>
+                    <Phone size={18} />
+                    <span>Contact Us</span>
+                  </li>
+                  <li className="mobile-dropdown-item" onClick={() => { setShowSponsorPopup(true); setMenuOpen(false); }}>
+                    <Handshake size={18} />
+                    <span>Sponsor Us</span>
+                  </li>
+                  <li className="mobile-dropdown-item">
+                    <Search size={18} />
+                    <span>Search...</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

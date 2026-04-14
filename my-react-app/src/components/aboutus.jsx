@@ -3,6 +3,7 @@ import "./AboutUs.css";
 import Navbar from "./Navbar";
 import bg1 from "../images/bearconsimage.jpg";
 
+
 export default function AboutUs() {
   const [openSection, setOpenSection] = useState(null);
   const [fakePage, setFakePage] = useState(null);

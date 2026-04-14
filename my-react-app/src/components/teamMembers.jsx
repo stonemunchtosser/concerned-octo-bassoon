@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./TeamMembers.css"; 
 import "../components/Sponsors.css"; 
@@ -9,7 +9,7 @@ import aikhemaura from "../images/aikhemaura.png";
 import ravenmogging from "../images/ravenmogging.png";
 import confused1vcx from "../images/confusedninaimage1.jpg";
 import stacyondaleft from "../images/stacyondaleft.jpg";
-import amrin from "../images/amrin.jpg";
+import amrin from "../images/amrin.webp";
 import majesticahhsunlight from "../images/majesticahhsunlight.jpg";
 import kevin from "../images/kevin.png";
 import twesha from "../images/twesha.png";
@@ -17,6 +17,7 @@ import teamdriver from "../images/teamdriver.jpg";
 import tyler from "../images/tyler.png";
 import noimagegiven from "../images/noimaginegiven.jpg";
 import mugshot from "../images/mugshot.jpg";
+import gurjaap from "../images/gurkaap.jpg";
 
 const teamData = [
   {
@@ -37,15 +38,15 @@ const teamData = [
     id: 3,
     name: "Gurjaap Kahlon",
     role: "Design Team Lead",
-    description: "Did not provide a description nor an image.",
-    image: noimagegiven,
+    description: "- Models robot components and assemblies in Fusion 360, AutoCAD, and SolidWorks \n - Manages parts manufacturing operations (3D printing, CNC machining, hand tools) \n- Works on mechanical design, prototyping, and testing of competition robot systems \n- Contributes to community outreach through elementary student robotics workshops",
+    image: gurjaap,
   },
   {
     id: 4,
-    name: "Hexuan (Nina) Liu",
+    name: "Hexuan Liu",
     role: "Admin (Website)",
     description:
-      "Is the sole creator of this website, which was made using React.js (a javaScript framework) from scratch. Was briefly a member during Crescendo (2024).",
+      "Creator of this website, which was made using javaScript. Was briefly a member during Crescendo (2024).",
     image: confused1vcx,
   },
   {
@@ -86,8 +87,8 @@ const teamData = [
   {
     id: 10,
     name: "Raven Mui",
-    role: "Design Team Lead Apprentice",
-    description: "9180's design lead apprentice who also does a lot on the admin side of things; has taken on projects such as organizing and creating products for our school's winter market (the Polar Pop-up) as well as having organized our club fair.",
+    role: "Graphic Design",
+    description: "9180's graphic designer who also does a lot on the admin side of things; has taken on projects such as organizing and creating products for our school's winter market (the Polar Pop-up) as well as having organized our club fair. Designed the artwork featured on the About Us page",
     image: ravenmogging,
   },
   {
@@ -108,15 +109,15 @@ const teamData = [
     id: 13,
     name: "Amrin Wylie",
     role: "Significant Build Team Contributor",
-    description: "Handled the cutting of aluminum parts and was heavily involved with the general construction and maintenance of the robot during 2025. Has been on the team since Reefscape (2025) and \"also rides a motorcycle :)\"",
+    description: "Handled the cutting of aluminum parts and was heavily involved with the general construction and maintenance of the robot during 2025. Has been on the team since Reefscape (2025).",
     image: amrin,
   },
   {
     id: 14,
     name: "Che (Tracy) Wang",
-    role: "Significant Design Contributor",
-    description: "Designed the bear consellation (used in the About Us page and on the t-shirts), designed the Lego Workshops page of this website, and made the field elements for Reefscape. Was generally involved (consulted regarding) the website's design and functionality.",
-    image: stacyondaleft,
+    role: "Website Design Contributor",
+    description: "Designed the bear consellation (used on the t-shirts in 2024 and featured on the About Us page Artwork), designed the lego robotics workshop page of this website, and made the field elements for Reefscape. Was generally involved (consulted regarding) the website's design and functionality.",
+    image: noimagegiven,
   },
   {
     id: 15,
@@ -127,23 +128,60 @@ const teamData = [
   },
 ];
 
-const TeamCard = ({ member, index }) => (
-  <motion.div
-    className="team-card"
-    initial={{ opacity: 0, y: 30 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-  >
-    <div className="team-card-image">
-      <img src={member.image} alt={member.name} />
-    </div>
-    <div className="p-6 text-center">
-      <h3>{member.name}</h3>
-      <p>{member.role}</p>
-      <p className="description">{member.description}</p>
-    </div>
-  </motion.div>
-);
+const TeamCard = ({ member, index }) => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  return (
+    <>
+      <motion.div
+        className="team-card"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+      >
+        <div className="team-card-image">
+          <img src={member.image} alt={member.name} />
+        </div>
+        <div className="p-6 text-center">
+          <h3>{member.name}</h3>
+          <p>{member.role}</p>
+          <button 
+            className="see-description-btn"
+            onClick={() => setShowPopup(true)}
+          >
+            See Description
+          </button>
+        </div>
+      </motion.div>
+
+      {showPopup && (
+        <>
+          <div 
+            className="popup-backdrop"
+            onClick={() => setShowPopup(false)}
+          />
+          <div className="description-popup">
+            <button 
+              className="popup-close"
+              onClick={() => setShowPopup(false)}
+            >
+              ×
+            </button>
+            <div className="popup-content">
+              <h2>{member.name}</h2>
+              <p className="popup-role">{member.role}</p>
+              <div className="popup-description">
+                {member.description.split('\n').map((line, index) => (
+                  <p key={index}>{line.trim()}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+    </>
+  );
+};
 
 const TeamMembers = () => {
   const containerVariants = {
@@ -163,7 +201,7 @@ const TeamMembers = () => {
 
         <div className="sponsors-hero-content">
           <div className="hero-text-wrap">
-            <h1 className="hero-title">Team Leads</h1>
+            <h1 className="hero-title">Team "Leads"</h1>
             <p className="hero-location">
               The leaders and/or individuals who made significant contributions to Ursa Major 9180. 
             </p>

@@ -158,3 +158,126 @@
   font-size: 0.875rem;
   margin-top: 0.5rem;
 }
+
+/* See Description Button */
+.see-description-btn {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.75rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 0;
+}
+
+.see-description-btn:hover {
+  color: #2563eb;
+}
+
+/* Popup Styles */
+.popup-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  z-index: 999;
+  animation: fadeInBackdrop 0.3s ease;
+}
+
+@keyframes fadeInBackdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.description-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  animation: slideInPopup 0.3s ease;
+}
+
+@keyframes slideInPopup {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.popup-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #6b7280;
+  transition: color 0.2s ease;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-close:hover {
+  color: #1e2b3f;
+}
+
+.popup-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e2b3f;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.popup-role {
+  color: #364f78;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.popup-description {
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.popup-description p {
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0.5rem 0;
+}
+
+.popup-description p:first-child {
+  margin-top: 0;
+}
+
+.popup-description p:last-child {
+  margin-bottom: 0;
+}
