@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./AboutUs.css";
 import Navbar from "./Navbar";
-import bg1 from "../images/bearconsimage.jpg";
+import bg1 from "../images/bearconsimage.png";
 
 
 export default function AboutUs() {
