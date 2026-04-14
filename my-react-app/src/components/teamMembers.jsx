@@ -16,6 +16,7 @@ import tyler from "../images/tyler.png";
 import noimagegiven from "../images/noimaginegiven.jpg";
 import mugshot from "../images/mugshot.jpg";
 import gurjaap from "../images/gurkaap.jpg";
+import legoWorkshopsketchWithStacy from "../images/legoworkshopblueprintwithstacy.png";
 
 const teamData = [
   {
@@ -114,7 +115,7 @@ const teamData = [
     id: 14,
     name: "Che (Tracy) Wang",
     role: "Website Design Contributor",
-    description: "Designed the bear consellation (used on the t-shirts in 2024 and featured on the About Us page Artwork), designed the lego robotics workshop page of this website, and made the field elements for Reefscape. Was generally involved (consulted regarding) the website's design and functionality.",
+    description: "Designed the bear consellation (used on the t-shirts in 2024 and featured on the About Us page Artwork), designed the lego robotics workshop page of this website.\n(her sketch here:)\nAlso made the field elements for Reefscape. Was generally involved (consulted regarding) the website's design and functionality.",
     image: noimagegiven,
   },
   {
@@ -169,9 +170,22 @@ const TeamCard = ({ member, index }) => {
               <h2>{member.name}</h2>
               <p className="popup-role">{member.role}</p>
               <div className="popup-description">
-                {member.description.split('\n').map((line, index) => (
-                  <p key={index}>{line.trim()}</p>
-                ))}
+                {member.description.split('\n').flatMap((line, index) => {
+                  const trimmed = line.trim();
+                  if (member.id === 14 && trimmed === '(her sketch here:)') {
+                    return [
+                      <p key={`${index}-text`}>{trimmed}</p>,
+                      <div key={`${index}-img`} className="tracy-sketch-block">
+                        <img
+                          src={legoWorkshopsketchWithStacy}
+                          alt="LEGO Workshop sketch with Stacy"
+                          className="tracy-sketch-image"
+                        />
+                      </div>,
+                    ];
+                  }
+                  return <p key={index}>{trimmed}</p>;
+                })}
               </div>
             </div>
           </div>
