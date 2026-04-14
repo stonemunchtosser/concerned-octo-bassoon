@@ -34,10 +34,12 @@ function App() {
   const [currentCampSlide, setCurrentCampSlide] = useState(0);
   const [campSlideFade, setCampSlideFade] = useState(true);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [isTinyScreen, setIsTinyScreen] = useState(false);
 
   useEffect(() => {
     const checkScreenSize = () => {
       setIsSmallScreen(window.innerWidth < 768);
+      setIsTinyScreen(window.innerWidth < 501);
     };
 
     checkScreenSize();
@@ -80,6 +82,14 @@ function App() {
 
   return (
     <div className="App">
+      {isTinyScreen && (
+        <div className="mobile-overlay">
+          <div className="mobile-message">
+            <p>Sorry, mobile display coming soon.</p>
+            <p>Please view on a larger screen</p>
+          </div>
+        </div>
+      )}
       <Navbar />
       <Routes>
         <Route path="/" element={
