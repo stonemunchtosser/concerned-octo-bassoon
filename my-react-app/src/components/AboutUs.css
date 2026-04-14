@@ -63,7 +63,6 @@
   margin-top: 0;
 }
 
-/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .aboutpage-hero-content {
     top: 35%;
@@ -207,7 +206,6 @@
   display: none;
 }
 
-/* About Page Popup Styles - Same color scheme as default page */
 .about-popup-backdrop {
   position: fixed;
   top: 0;
@@ -313,7 +311,6 @@
   text-decoration: underline;
 }
 
-/* Fake Page Popup (popup over popup on small screens) */
 .fake-page-popup {
   z-index: 1100;
   width: clamp(260px, 80vw, 700px);
@@ -324,7 +321,6 @@
   padding: 30px;
 }
 
-/* Responsive adjustments for ultra compressed displays */
 @media (max-width: 360px) {
   .about-popup {
     padding: 15px;

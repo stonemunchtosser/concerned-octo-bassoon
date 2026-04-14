@@ -159,7 +159,6 @@
   margin-top: 0.5rem;
 }
 
-/* See Description Button */
 .see-description-btn {
   background: none;
   border: none;
@@ -177,7 +176,6 @@
   color: #2563eb;
 }
 
-/* Popup Styles */
 .popup-backdrop {
   position: fixed;
   top: 0;
@@ -283,7 +281,6 @@
   margin-bottom: 0;
 }
 
-/* Responsive adjustments for team members popup */
 @media (max-width: 640px) {
   .description-popup {
     padding: 30px;
@@ -314,7 +311,6 @@
   }
 }
 
-/* Responsive adjustments for ultra compressed displays */
 @media (max-width: 360px) {
   .description-popup {
     padding: 15px;

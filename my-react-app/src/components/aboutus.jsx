@@ -248,7 +248,6 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Popups for small screens */}
       {showPopup && (
         <>
           <div className="about-popup-backdrop" onClick={closePopup} />
@@ -339,7 +338,6 @@ export default function AboutUs() {
         </>
       )}
 
-      {/* Fake Page Popups for small screens */}
       {showFakePagePopup && (
         <>
           <div className="about-popup-backdrop" onClick={closeFakePage} />
